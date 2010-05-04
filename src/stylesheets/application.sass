@@ -38,6 +38,17 @@
   -webkit-border-bottom-left-radius = !border_radius
   border-bottom-left-radius = !border_radius
 
+=menu_border_both
+  +border
+  border-top: none
+  -moz-border-radius-bottomright = !border_radius
+  -webkit-border-bottom-right-radius = !border_radius
+  border-bottom-right-radius = !border_radius
+  -moz-border-radius-bottomleft = !border_radius
+  -webkit-border-bottom-left-radius = !border_radius
+  border-bottom-left-radius = !border_radius
+
+
 
 @font-face
   font-family: "Linux Biolinum2"
@@ -138,8 +149,7 @@ a
 
 
 =menu_hover
-  height: 30px
-  line-height: 20px
+  background-color: rgba(0, 204, 0, .2)
   a
     display: block
 
@@ -162,9 +172,10 @@ a
       margin: 0
       div
         padding: 0 5px
-        height: 18px
-        +menu_border_left
+        height: !tab_height + 5
+        +menu_border_both
         cursor: pointer
+        text-align: center
       &.current
         div
           +menu_hover
@@ -172,6 +183,8 @@ a
       a
         height: !tab_height
         padding-top: 12px
+        display: block
+        text-transform: capitalize
     li.right
       float: right
       width = !tab_width * 1.5
